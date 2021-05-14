@@ -6,8 +6,9 @@ import br.com.maximo.springeventsstudies.publishers.EventPublisher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
-import java.util.stream.IntStream;
 
 
 @Component
@@ -16,7 +17,8 @@ public class EventProcessor {
     private EventPublisher publisher;
 
     public void process() {
-        IntStream.of(10).forEach(this::builderEvent);
+        final List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
+        list.forEach(this::builderEvent);
     }
 
     private void builderEvent(int i) {

@@ -6,10 +6,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.Date;
-
-import static java.lang.System.out;
-
 @SpringBootApplication
 public class EventsApplication implements CommandLineRunner {
     @Autowired
@@ -20,8 +16,6 @@ public class EventsApplication implements CommandLineRunner {
     }
 
     public void run(String... args) throws Exception {
-        out.println("Início: " + new Date());
         processor.process();
-        out.println("Fim: " + new Date());
     }
 }
